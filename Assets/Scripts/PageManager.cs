@@ -24,7 +24,17 @@ public class PageManager : MonoBehaviour
 
 		if (pagesCollected == 3)
 		{
-			enemy.viewRange = 15;
-		}	
+			enemy.viewRange = 50;
+		}
+
+		if (pagesCollected == 4)
+		{
+			enemy.speed *= 2;
+		}
+
+		if (pagesCollected == 4)
+		{
+			enemy.viewRange = 60;
+		}
 	}
 }
