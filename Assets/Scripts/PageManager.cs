@@ -7,10 +7,16 @@ public class PageManager : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
+	if (!other.gameObject.CompareTag("Page"))
+		{
+			return;
+		}	
+		
 		print("page collected");
-		Destroy(other.gameObject);
-
+		//Destroy(other.gameObject.CompareTag("Page"));
+Destroy(other.gameObject);
 		pagesCollected++;
+		
 
 		if (pagesCollected == 1)
 		{
