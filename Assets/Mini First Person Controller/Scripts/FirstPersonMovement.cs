@@ -1,8 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FirstPersonMovement : MonoBehaviour
 {
+    public string sceneName;
+
+
     public float speed = 5;
 
     [Header("Running")]
@@ -40,5 +44,13 @@ public class FirstPersonMovement : MonoBehaviour
 
         // Apply movement.
         rigidbody.velocity = transform.rotation * new Vector3(targetVelocity.x, rigidbody.velocity.y, targetVelocity.y);
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }

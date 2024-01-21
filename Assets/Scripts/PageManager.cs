@@ -4,6 +4,7 @@ public class PageManager : MonoBehaviour
 {
 	public Enemy enemy;
 	public int pagesCollected = 0;
+	
 
 	void OnTriggerEnter(Collider other)
 	{
@@ -41,6 +42,12 @@ Destroy(other.gameObject);
 		if (pagesCollected == 4)
 		{
 			enemy.viewRange = 60;
+		}
+
+		if (pagesCollected == 5)
+		{
+			enemy.speed *= 2;
+			enemy.viewRange = 100;
 		}
 	}
 }

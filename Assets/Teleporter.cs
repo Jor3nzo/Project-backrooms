@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class Teleporter : MonoBehaviour
 {
     public string nextLevelName;
+    public bool GameObject = false;
 
     private void OnCollisionEnter(Collision other)
     {
